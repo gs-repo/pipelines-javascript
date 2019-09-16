@@ -20,7 +20,8 @@ steps:
   inputs:
     verbose: true
 
-- script: |
-    npm install
-    npm run build
-  displayName: 'npm install and build'
+- task: Npm@1
+  inputs:
+    command: 'publish'
+    publishRegistry: 'useFeed'
+    publishFeed: '22088937-6cf1-47a3-b3aa-8bc8ce5e6aab'
